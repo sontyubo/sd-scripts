@@ -35,7 +35,6 @@ RUN uv pip install --upgrade pip && \
     uv pip install xformers==0.0.23.post1 --index-url https://download.pytorch.org/whl/cu121 && \
     uv pip install -r requirements.txt
 
-RUN uv sync && \
-    uv pip install -e .
+RUN uv sync
 
 CMD [ "bash" ]
