@@ -21,14 +21,17 @@ dependencies = [
     "safetensors==0.4.2",
     "tensorboard>=2.19.0",
     "toml==0.10.2",
-    "torch==2.5.1+cu124",   # torchが2.6.0以上だと、bitsandbytesにエラーが出る
-    "torchvision==0.20.1+cu124",
+    "torch==2.1.2+cu121", # torchが2.6.0以上だと、bitsandbytesにエラーが出る
+    "torchvision==0.16.2+cu121",
     "transformers==4.44.0",
     "voluptuous==0.13.1",
     "wandb>=0.19.11",
     "numpy<2.0",
     "imagesize>=1.4.1",
     "xformers",
+    "triton==2.1.0",
+    "onnx==1.15.0",
+    "onnxruntime-gpu==1.17.1",
 ]
 
 
@@ -37,13 +40,13 @@ environments = ["platform_machine == 'x86_64' and sys_platform == 'linux'"]
 
 
 [[tool.uv.index]]
-name = "pytorch-cu124"
-url = "https://download.pytorch.org/whl/cu124"
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
 explicit = true
 
 
 [tool.uv.sources]
-pytorch-triton = { index = "pytorch-cu124" }
-torch = { index = "pytorch-cu124" }
-torchvision = { index = "pytorch-cu124" }
-"triton" = { index = "pytorch-cu124" }
+pytorch-triton = { index = "pytorch-cu121" }
+torch = { index = "pytorch-cu121" }
+torchvision = { index = "pytorch-cu121" }
+triton = { index = "pytorch-cu121" }
