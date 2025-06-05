@@ -32,6 +32,7 @@ dependencies = [
     "triton==2.1.0",
     "onnx==1.15.0",
     "onnxruntime-gpu==1.17.1",
+    "rich>=14.0.0",
 ]
 
 
