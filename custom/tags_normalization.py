@@ -2,6 +2,7 @@ from pathlib import Path
 from argparse import ArgumentParser
 
 NG_WORDS = [
+    "1girl",
     "japanese_clothes",
     "sword",
     "kimono",
@@ -33,6 +34,14 @@ def normalize_text_file(file_path: str) -> None:
     text_file_path = Path(file_path)
     tags_text = read_textfile(text_file_path)
     removed_tags_text = remove_tags(tags_text)
+
+    if "隊服" in text_file_path.name:
+        removed_tags_text += ", uniform"
+    if "基本服" in text_file_path.name:
+        removed_tags_text += ", kimono"
+    if "snapshot" in text_file_path.name:
+        removed_tags_text += ", anime screencap"
+
     text_file_path.write_text(removed_tags_text, encoding="utf-8")  # ファイルに保存
 
 
