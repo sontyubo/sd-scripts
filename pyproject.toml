@@ -33,6 +33,7 @@ dependencies = [
     "onnx==1.15.0",
     "onnxruntime-gpu==1.17.1",
     "rich>=14.0.0",
+    "came-pytorch>=0.1.3",
 ]
 
 

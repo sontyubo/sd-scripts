@@ -146,6 +146,18 @@ wheels = [
 ]
 
 [[package]]
+name = "came-pytorch"
+version = "0.1.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "torch", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/28/c0/a33e490afcefab3fa0788a40b3cdcaa8e651cbc90731871925d15be02e7d/came-pytorch-0.1.3.tar.gz", hash = "sha256:d15cd5ae58f4df79b88e06cf78e4bbd0c31ab115df126475d7986a165c22836d", size = 5789, upload-time = "2024-02-05T13:49:57.246Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b5/3f/ee0265e886eb3052419e0110f12cbaa0471f042d0b702096fc4b51d63957/came_pytorch-0.1.3-py3-none-any.whl", hash = "sha256:576b30dd168cb688102806a4a1c8eb215fc2958b76c2e8a349a9e9c0a1c42f0a", size = 6156, upload-time = "2024-02-05T13:49:54.832Z" },
+]
+
+[[package]]
 name = "certifi"
 version = "2025.4.26"
 source = { registry = "https://pypi.org/simple" }
@@ -1061,6 +1073,7 @@ dependencies = [
     { name = "accelerate", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
     { name = "altair", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
     { name = "bitsandbytes", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
+    { name = "came-pytorch", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
     { name = "diffusers", extra = ["torch"], marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
     { name = "easygui", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
     { name = "einops", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
@@ -1093,6 +1106,7 @@ requires-dist = [
     { name = "accelerate", specifier = "==0.30.0" },
     { name = "altair", specifier = "==4.2.2" },
     { name = "bitsandbytes", specifier = "==0.44.0" },
+    { name = "came-pytorch", specifier = ">=0.1.3" },
     { name = "diffusers", extras = ["torch"], specifier = "==0.25.0" },
     { name = "easygui", specifier = "==0.98.3" },
     { name = "einops", specifier = "==0.7.0" },
