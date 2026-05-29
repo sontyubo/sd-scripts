@@ -24,8 +24,11 @@ dependencies = [
     "huggingface-hub==0.24.5",
     "imagesize==1.4.1",
     "onnx==1.15.0",
-    "onnxruntime-gpu",
+    "onnxruntime==1.17.1",
     "rich==13.7.0",
+    "numpy<2",   # numpyは、2.x系ではopenCVと競合する
+    "torch==2.1.2+cu121", # torchが2.6.0以上だと、bitsandbytesにエラーが出る
+    "torchvision==0.16.2+cu121",
 ]
 
 
@@ -34,10 +37,12 @@ environments = ["platform_machine == 'x86_64' and sys_platform == 'linux'"]
 
 
 [[tool.uv.index]]
-name = "onnxruntime-cuda-12"
-url = "https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/"
+name = "torch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
 explicit = true
 
 
 [tool.uv.sources]
 onnxruntime-gpu = { index = "onnxruntime-cuda-12" }
+torch = { index = "torch-cu121" }
+torchvision = { index = "torch-cu121" }
